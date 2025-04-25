@@ -31,8 +31,10 @@ func main() {
 	}()
 
 	go func() {
-		b.Publish("tech", "New GO version released")
-		time.Sleep(5 * time.Second)
+		for {
+			b.Publish("tech", "New GO version released")
+			time.Sleep(5 * time.Second)
+		}
 	}()
 
 	select {}
